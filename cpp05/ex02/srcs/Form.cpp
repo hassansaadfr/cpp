@@ -44,7 +44,7 @@ Form&		Form::beSigned(Bureaucrat michel)
 bool		Form::canExecute(Bureaucrat const &michel) const
 {
 	if (_isSigned == false)
-		return false;
+		throw Form::FormNotSigned();
 	if (getGradeToExecute() > michel.getGrade())
 		throw Form::GradeTooHighException("The form level is too high for you asshole");
 	return true;
@@ -52,6 +52,14 @@ bool		Form::canExecute(Bureaucrat const &michel) const
 
 Form::GradeTooLowException::GradeTooLowException(std::string reason) : _reason(reason) {}
 Form::GradeTooHighException::GradeTooHighException(std::string reason) : _reason(reason) {}
+Form::FormNotSigned::FormNotSigned(std::string reason) : _reason(reason) {}
+
+
+const char*	Form::FormNotSigned::what(void) const throw()
+{
+	return _reason.data();
+}
+
 
 const char*	Form::GradeTooHighException::what(void) const throw()
 {

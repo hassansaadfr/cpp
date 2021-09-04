@@ -46,6 +46,14 @@ class Form
 			private:
 				std::string _reason;
 		};
+		class FormNotSigned: public std::exception
+		{
+			public:
+				FormNotSigned(std::string reason = "The form is not signed");
+				virtual const char*	what(void) const throw();
+			private:
+				std::string _reason;
+		};
 };
 
 std::ostream &		operator<<(std::ostream &o, Form const &src);

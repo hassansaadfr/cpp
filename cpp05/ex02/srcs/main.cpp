@@ -2,6 +2,7 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -10,19 +11,19 @@ int main()
 	Bureaucrat	paul("Paul", 138);
 	ShrubberyCreationForm shru("Shrubbery");
 	RobotomyRequestForm	robot("Robotomy");
+	PresidentialPardonForm	president("Pourtine");
 
 	////// Shruberry part
 		// No one can execute here
 	michel.executeForm(shru);
 	paul.executeForm(shru);
-
 	paul.signForm(shru);
 
 	michel.executeForm(shru);
 	paul.executeForm(shru);
 
-	////// Robotomy part
-		// No one can execute here
+	// ////// Robotomy part
+	// 	// No one can execute here
 	michel.executeForm(robot);
 	paul.executeForm(robot);
 
@@ -30,4 +31,17 @@ int main()
 
 	michel.executeForm(robot);
 	paul.executeForm(robot);
+
+
+	// ////// Presidential part
+	// 	// No one can execute here
+	michel.executeForm(president);
+	paul.executeForm(president);
+
+	paul.signForm(president);
+
+	michel.executeForm(president);
+	paul.executeForm(president);
+
+	return 0;
 }
