@@ -12,7 +12,7 @@ int main()
 	ShrubberyCreationForm shru("Shrubbery");
 	RobotomyRequestForm	robot("Robotomy");
 	PresidentialPardonForm	president("Pourtine");
-
+int a = 42;
 	////// Shruberry part
 		// No one can execute here
 	michel.executeForm(shru);
