@@ -1,17 +1,17 @@
-CC		=	clang++
+CXX		=	clang++
 
 NAME	=	a.out
 
 HEAD	=	-I srcs
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
 SRCS	=	$(wildcard srcs/*.cpp)
 
 OBJS	=	${SRCS:.cpp=.o}
 
 $(NAME)	:	${OBJS}
-			@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+			@${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 all		:	$(NAME)
 

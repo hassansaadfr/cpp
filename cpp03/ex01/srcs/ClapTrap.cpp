@@ -5,7 +5,7 @@ ClapTrap::ClapTrap(void) : _hitpoints(10), _energyPoints(10), _attackDamage(0)
 	std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _hitpoints(10), _energyPoints(10), _attackDamage(0), _name(name)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap Assignation constructor called" << std::endl;
 }
@@ -90,7 +90,13 @@ void			ClapTrap::set_attackDamage(int attackDamage)
 	this->_attackDamage = attackDamage;
 }
 
+std::string		ClapTrap::get_name(void) const
+{
+	return _name;
+}
+
 std::ostream	&operator<<(std::ostream &o, ClapTrap const &src)
 {
 	o << src.get_name();
+	return o;
 }

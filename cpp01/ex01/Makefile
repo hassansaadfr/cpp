@@ -1,10 +1,10 @@
-CC		=	clang++
+CXX		=	clang++
 
 NAME	=	horde
 
 HEAD	=	-I srcs
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCS	=	main.cpp \
 			Zombie.cpp \
@@ -14,7 +14,7 @@ OBJS	=	${addprefix srcs/,${SRCS:.cpp=.o}}
 
 
 $(NAME)	:	${OBJS}
-			@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+			@${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 all		:	$(NAME)
 

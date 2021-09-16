@@ -1,10 +1,10 @@
-CC		=	clang++
+CXX		=	clang++
 
 NAME	=	phoneBook
 
 HEAD	=	-I srcs
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 
 SRCS	=	main.cpp \
 			Phonebook.class.cpp \
@@ -14,7 +14,7 @@ OBJS	=	${addprefix srcs/,${SRCS:.cpp=.o}}
 
 
 $(NAME)	:	${OBJS}
-			@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+			@${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 all		:	$(NAME)
 

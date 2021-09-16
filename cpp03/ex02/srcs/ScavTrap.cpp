@@ -37,4 +37,5 @@ void	ScavTrap::attack(std::string const & target)
 std::ostream	&operator<<(std::ostream &o, ScavTrap const &src)
 {
 	o << src.get_name();
+	return o;
 }

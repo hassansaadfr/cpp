@@ -26,4 +26,5 @@ void	FragTrap::highFivesGuys(void)
 std::ostream	&operator<<(std::ostream &o, FragTrap const &src)
 {
 	o << src.get_name();
+	return o;
 }
