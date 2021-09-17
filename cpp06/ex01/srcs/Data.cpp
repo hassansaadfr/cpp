@@ -32,5 +32,6 @@ int		Data::get_value(void) const
 
 std::ostream &	operator<<(std::ostream &o, Data const &src)
 {
-
+	o << src.get_value();
+	return o;
 }
