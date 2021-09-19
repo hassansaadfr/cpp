@@ -2,9 +2,9 @@
 # define FRAGTRAP_H
 
 # include <iostream>
-# include "ScavTrap.hpp"
+# include "ClapTrap.hpp"
 
-class FragTrap: public ScavTrap
+class FragTrap: public ClapTrap
 {
 	public:
 		FragTrap(void);

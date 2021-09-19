@@ -1,28 +1,26 @@
-CXX		=	clang++
+CXX			=	clang++
 
-NAME	=	a.out
+NAME		=	a.out
 
-HEAD	=	-I srcs
+HEAD		=	-I srcs
 
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRCS	=	main.cpp \
-			ClapTrap.cpp \
-			ScavTrap.cpp
+SRCS		=	$(wildcard srcs/*.cpp)
 
-OBJS	=	${addprefix srcs/,${SRCS:.cpp=.o}}
+OBJS		=	${SRCS:.cpp=.o}
 
-$(NAME)	:	${OBJS}
-			@${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
+$(NAME)		:	${OBJS}
+				@${CXX} ${CXXFLAGS} ${HEAD} ${OBJS} -o ${NAME}
 
-all		:	$(NAME)
+all			:	$(NAME)
 
-clean	:
-			@rm -f $(OBJS)
+clean		:
+				@rm -f $(OBJS)
 
-fclean	:	clean
-			@rm -f $(NAME)
+fclean		:	clean
+				@rm -f $(NAME)
 
-re		:	fclean all
+re			:	fclean all
 
-.PHONY	:	all clean fclean re
+.PHONY		:	all clean fclean re

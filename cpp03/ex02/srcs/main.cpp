@@ -9,7 +9,7 @@ int main(void) {
 	Jack.set_attackDamage(100);
 	Paul.set_attackDamage(1000);
 
-	Jack.guardGate();
+	Jack.highFivesGuys();
 	Jack.attack("Paul");
 	Paul.takeDamage(Jack.get_attackDamage());
 
@@ -20,7 +20,7 @@ int main(void) {
 	Paul.beRepaired(100);
 
 	Paul.attack("Jack");
-	Paul.guardGate();
+	Paul.highFivesGuys();
 	Jack.takeDamage(Paul.get_attackDamage());
 
 	return 0;
