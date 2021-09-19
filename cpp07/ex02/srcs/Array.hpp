@@ -36,7 +36,7 @@ class Array
 		T&				operator[](unsigned int i)
 		{
 			if (i >= _size)
-				throw std::exception();
+				throw OutOfRange();
 			return _elems[i];
 		}
 
@@ -44,6 +44,11 @@ class Array
 	private:
 		T				*_elems;
 		unsigned int	_size;
+	public:
+		class OutOfRange: public std::exception
+		{
+			 virtual const char* what() const throw() { return ("Out of range."); }
+		};
 };
 
 template <typename T>
