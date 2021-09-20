@@ -5,10 +5,10 @@
 
 int	main(void)
 {
-	int		N = 10;
-	Animal	*animals = new Animal[N];
+	unsigned int		N = 10;
+	Animal				*animals = new Animal[N];
 
-	for (size_t i = 0; i < N; i++)
+	for (unsigned int i = 0; i < N; i++)
 	{
 		if ( i % 2 == 0 )
 			animals[i] = Cat();
