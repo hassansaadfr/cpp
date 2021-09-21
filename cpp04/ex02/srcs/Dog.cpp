@@ -14,11 +14,19 @@ Dog::~Dog(void)
 	std::cout << "Dog Destructor called" << std::endl;
 }
 
+Dog::Dog(Dog const &src)
+{
+	*this = src;
+}
+
 Dog&	Dog::operator=(Dog const &src)
 {
 	std::cout << "Dog Copy constructor called" << std::endl;
 	if (this != &src)
+	{
 		_type = src.getType();
+		*brain = *src.brain;
+	}
 	return *this;
 }
 

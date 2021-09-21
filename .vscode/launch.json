@@ -8,7 +8,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "${workspaceFolder}/cpp07/ex02/a.out",
+			"program": "${workspaceFolder}/cpp04/ex01/a.out",
 			"args": ["nan"],
 			"cwd": "${workspaceFolder}"
 		}

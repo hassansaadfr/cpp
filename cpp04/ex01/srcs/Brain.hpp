@@ -10,10 +10,10 @@ class Brain
 		~Brain(void);
 		Brain(Brain const &src);
 
-		Brain&		operator=(Brain const &src);
-		std::string	operator[](unsigned int i);
+		Brain&			operator=(Brain const &src);
+		std::string&	operator[](unsigned int i);
 	private:
-		std::string	_ideas[100];
+		std::string		_ideas[100];
 };
 
 std::ostream &		operator<<(std::ostream &o, Brain const &src);

@@ -25,7 +25,7 @@ Dog&	Dog::operator=(Dog const &src)
 	if (this != &src)
 	{
 		_type = src.getType();
-		brain = src.brain;
+		*brain = *src.brain;
 	}
 	return *this;
 }

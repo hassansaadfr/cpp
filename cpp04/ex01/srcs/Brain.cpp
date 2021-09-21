@@ -2,6 +2,11 @@
 
 Brain::Brain(void)
 {
+	for (size_t i = 0; i < 100; i++)
+	{
+		_ideas[i] = "";
+	}
+
 	std::cout << "Brain Default constructor called" << std::endl;
 }
 
@@ -25,7 +30,7 @@ Brain&			Brain::operator=(Brain const &src)
 	return *this;
 }
 
-std::string		Brain::operator[](unsigned int i)
+std::string	&	Brain::operator[](unsigned int i)
 {
 	return _ideas[i];
 }
