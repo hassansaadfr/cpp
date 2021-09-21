@@ -1,45 +1,75 @@
 #include "Span.hpp"
+#include <climits>
 
-Span::Span(void): _list(new int[0]()), _size(0)
+Span::Span(void): _maxSize(0)
 {}
 
-Span::Span(unsigned int N): _list(new int[N]()), _size(N)
+Span::Span(unsigned int N): _maxSize(N)
 {}
 
 Span::~Span(void)
+{}
+
+unsigned int	Span::longestSpan(void)
 {
-	delete [] _list;
+	_list.sort();
+	if (_list.size() <= 1)
+		throw Span::Error("Not enough numbers");
+	return *--_list.end() - *_list.begin();
 }
 
-Span::Span(Span const &src)
+unsigned int	Span::shortestSpan(void)
 {
-	if (this != &src)
+	if (_list.size() <= 1)
+		throw Span::Error("Not enough numbers");
+
+	unsigned int	out = UINT_MAX;
+	std::list<int>::const_iterator	current = _list.begin();
+	std::list<int>::const_iterator	last = _list.end();
+
+	_list.sort();
+	while (current != last)
 	{
-		_size = src._size;
-		delete [] _list;
-		_list = new int[_size]();
-		for (unsigned int i = 0; i < src._size; i++)
-			_list[i] = src._list[i];
+		std::list<int>::const_iterator	tmp = current;
+		++tmp;
+		if (tmp == last)
+			break ;
+		unsigned int delta = *tmp - *current;
+		if (delta < out)
+			out = delta;
+		current++;
 	}
+	return out;
 }
+
+Span::Span(Span const &src): _maxSize(src._maxSize), _list(src._list)
+{}
 
 Span&	Span::operator=(Span const &src)
 {
-	_size = src._size;
-	delete [] _list;
-	_list = new int[_size]();
-	for (unsigned int i = 0; i < src._size; i++)
-		_list[i] = src._list[i];
+	if (this != &src)
+	{
+		_list = src._list;
+		_maxSize = src._maxSize;
+	}
 	return *this;
 }
 
 void	Span::addNumber(int n)
 {
-
+	if (_list.size() == _maxSize)
+		throw Span::Error("Cant add more number");
+	_list.push_back(n);
 }
 
-
-int		&Span::getList(void) const
+const std::list<int>	&Span::getList(void) const
 {
-	return (*this->_list);
+	return _list;
+}
+
+std::ostream &		operator<<(std::ostream &o, Span const &src)
+{
+	for (std::list<int>::const_iterator it = src.getList().begin(); it != src.getList().end(); it++)
+		o << *it << std::endl;
+	return o;
 }

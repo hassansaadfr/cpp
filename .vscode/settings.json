@@ -48,6 +48,7 @@
 		"typeinfo": "cpp",
 		"bit": "cpp",
 		"iomanip": "cpp",
-		"ctime": "cpp"
+		"ctime": "cpp",
+		"list": "cpp"
 	}
 }

@@ -4,7 +4,7 @@ NAME		=	a.out
 
 HEAD		=	-I srcs
 
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
 SRCS		=	$(wildcard srcs/*.cpp)
 

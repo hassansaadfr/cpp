@@ -2,19 +2,7 @@
 # define SPAN_H
 
 # include <iostream>
-
-class CantAdd: public std::exception
-{
-	virtual const char* what() const throw() { return ("Cant number"); }
-};
-class NoNumber: public std::exception
-{
-	virtual const char* what() const throw() { return ("There is no number"); }
-};
-class OneNumber: public std::exception
-{
-	virtual const char* what() const throw() { return ("Not enough numbers"); }
-};
+# include <list>
 
 class Span
 {
@@ -24,15 +12,34 @@ class Span
 		~Span(void);
 		Span(Span const &src);
 
-		Span&				operator=(Span const &src);
-		void				addNumber(int n);
-		int					&getList(void) const;
-		bool				empty(void) const;
+		Span&					operator=(Span const &src);
+		void					addNumber(int n);
+
+		template< typename Iterator >
+		void					addNumber(Iterator begin, Iterator end)
+		{
+			while (begin != end)
+				addNumber(*begin++);
+		}
+		unsigned int			shortestSpan(void);
+		unsigned int			longestSpan(void);
+		const std::list<int>	&getList(void) const;
 	private:
-		unsigned int		_size;
-		int					*_list;
+		unsigned int		_maxSize;
+		std::list<int>		_list;
+	public:
+		class Error: public std::exception
+		{
+			public:
+				Error(void) : _what("Error") {};
+				Error(const char* what): _what(what) {};
+				virtual const char* what() const throw() { return _what; };
+			private:
+				const char*	_what;
+		};
+
 };
 
-// std::ostream &		operator<<(std::ostream &o, Span const &src);
+std::ostream &		operator<<(std::ostream &o, Span const &src);
 
 #endif
