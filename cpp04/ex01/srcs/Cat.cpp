@@ -14,11 +14,19 @@ Cat::~Cat(void)
 	std::cout << "Cat Destructor called" << std::endl;
 }
 
+Cat::Cat(Cat const &src)
+{
+	*this = src;
+}
+
 Cat&	Cat::operator=(Cat const &src)
 {
 	std::cout << "Cat Copy constructor called" << std::endl;
 	if (this != &src)
+	{
 		_type = src.getType();
+		brain = src.brain;
+	}
 	return *this;
 }
 
