@@ -49,6 +49,7 @@
 		"bit": "cpp",
 		"iomanip": "cpp",
 		"ctime": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"cstring": "cpp"
 	}
 }

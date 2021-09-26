@@ -1,10 +1,11 @@
 #include "Convert.hpp"
 #include <limits>
 #include <math.h>
+
 Convert::Convert(void)
 {}
 
-Convert::Convert(char *value) :_value(std::stod(value))
+Convert::Convert(char *value) :_value(atof(value))
 {}
 
 Convert::Convert(Convert const &src): _value(src.get_value())

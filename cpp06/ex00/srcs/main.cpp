@@ -54,6 +54,7 @@ int main(int ac, char **av)
 	{
 		std::cout  << e.what() << std::endl;
 	}
-	std::cout << "to double: " << to_convert.to_double() << std::endl;
+	std::cout << "to double: ";
+	std::cout << to_convert.to_double() << std::endl;
 	return 0;
 }

@@ -41,6 +41,7 @@ class Array
 		}
 
 		unsigned int	size(void) const { return _size; };
+
 	private:
 		T				*_elems;
 		unsigned int	_size;

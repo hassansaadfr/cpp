@@ -19,6 +19,6 @@ int	main(void)
 	uintptr_t serialized = serialize(&initial);
 	Data *deserialized(deserialize(serialized));
 
-	std::cout << "value of initial " << initial.get_value() << " value of deserialized object " << deserialized->get_value() << std::endl;
+	std::cout << "value of initial " << initial.get_value() << std::endl << "value of deserialized object " << deserialized->get_value() << std::endl;
 	return 0;
 }
