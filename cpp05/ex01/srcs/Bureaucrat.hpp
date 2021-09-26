@@ -6,7 +6,7 @@
 /*   By: hsaadaou <hsaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 13:39:27 by hsaadaou          #+#    #+#             */
-/*   Updated: 2021/09/01 16:25:46 by hsaadaou         ###   ########.fr       */
+/*   Updated: 2021/09/26 13:06:21 by hsaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Bureaucrat
 		std::string			getName(void) const;
 		void				incrementGrade(void);
 		void				decrementGrade(void);
-		void				signForm(Form form);
+		void				signForm(Form &form);
 
 	private:
 		std::string	const	_name;

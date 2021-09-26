@@ -6,7 +6,7 @@
 /*   By: hsaadaou <hsaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 13:39:35 by hsaadaou          #+#    #+#             */
-/*   Updated: 2021/09/25 17:43:25 by hsaadaou         ###   ########.fr       */
+/*   Updated: 2021/09/26 13:06:26 by hsaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,17 @@ void			Bureaucrat::decrementGrade(void)
 	setGrade(_grade + 1);
 }
 
-void			Bureaucrat::signForm(Form form)
+void			Bureaucrat::signForm(Form &form)
 {
-	form.beSigned(*this);
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " sign form" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << _name << " cannot sign because: " << e.what() << std::endl;
+	}
 }
 
 std::ostream &		operator<<(std::ostream &o, Bureaucrat const &src)

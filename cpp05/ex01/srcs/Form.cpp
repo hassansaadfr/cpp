@@ -10,6 +10,9 @@ Form::~Form(void)
 	std::cout << "Form Destructor called" << std::endl;
 }
 
+Form::Form(Form const &src): _name(src._name), _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute), _isSigned(src._isSigned)
+{}
+
 Form&		Form::operator=(Form const &src)
 {
 	std::cout << "Form Copy constructor called" << std::endl;
@@ -42,6 +45,8 @@ Form&		Form::beSigned(Bureaucrat michel)
 {
 	if (michel.getGrade() > _gradeToSign)
 		throw Form::GradeTooLowException();
+	if (_isSigned == true)
+		throw Form::AlreadySigned();
 	_isSigned = true;
 	std::cout << "Form is successfully signed" << std::endl;
 	return *this;
@@ -50,6 +55,11 @@ Form&		Form::beSigned(Bureaucrat michel)
 const char*	Form::GradeTooHighException::what(void) const throw()
 {
 	return "Grade too high";
+}
+
+const char*	Form::AlreadySigned::what(void) const throw()
+{
+	return "The form is already signed";
 }
 
 const char*	Form::GradeTooLowException::what(void) const throw()

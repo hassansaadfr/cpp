@@ -20,5 +20,5 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-
+	michel.signForm(assedic);
 }
