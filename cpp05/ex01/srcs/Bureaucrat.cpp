@@ -6,7 +6,7 @@
 /*   By: hsaadaou <hsaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 13:39:35 by hsaadaou          #+#    #+#             */
-/*   Updated: 2021/09/01 16:03:17 by hsaadaou         ###   ########.fr       */
+/*   Updated: 2021/09/25 17:43:25 by hsaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ std::string		Bureaucrat::getName(void) const
 
 void			Bureaucrat::incrementGrade(void)
 {
-	setGrade(_grade + 1);
+	setGrade(_grade - 1);
 }
 
 void			Bureaucrat::decrementGrade(void)
 {
-	setGrade(_grade - 1);
+	setGrade(_grade + 1);
 }
 
 void			Bureaucrat::signForm(Form form)
@@ -83,6 +83,7 @@ void			Bureaucrat::signForm(Form form)
 std::ostream &		operator<<(std::ostream &o, Bureaucrat const &src)
 {
 	o << src.getName() << ", bureaucrat grade" << src.getGrade();
+	return o;
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()

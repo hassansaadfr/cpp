@@ -33,26 +33,17 @@ class Form
 		class GradeTooHighException: public std::exception
 		{
 			public:
-				GradeTooHighException(std::string reason = "Grade too high");
 				virtual const char*	what(void) const throw();
-			private:
-				std::string _reason;
 		};
 		class GradeTooLowException: public std::exception
 		{
 			public:
-				GradeTooLowException(std::string reason = "Grade too low");
 				virtual const char*	what(void) const throw();
-			private:
-				std::string _reason;
 		};
 		class FormNotSigned: public std::exception
 		{
 			public:
-				FormNotSigned(std::string reason = "The form is not signed");
 				virtual const char*	what(void) const throw();
-			private:
-				std::string _reason;
 		};
 };
 
