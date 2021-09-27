@@ -9,9 +9,9 @@ class NotExist: public std::exception
 };
 
 template < typename T>
-int &easyfind(T container, int n)
+int &easyfind(T &container, int n)
 {
-	for (std::vector<int>::iterator it = container.begin(); it != container.end(); ++it)
+	for (typename T::iterator it = container.begin(); it != container.end(); ++it)
 	{
 		if (*it == n)
 			return *it;

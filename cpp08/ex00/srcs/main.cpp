@@ -11,7 +11,7 @@ void	find(std::vector<int> &numbers, int n)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << ": " << n << '\n';
 	}
 }
 
