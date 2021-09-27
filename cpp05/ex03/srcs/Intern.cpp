@@ -36,8 +36,8 @@ Form*	Intern::makeForm(std::string const name, std::string const target) const
 	};
 
 	Creator*	fun[3] = {
-		create<ShrubberyCreationForm>,
 		create<RobotomyRequestForm>,
+		create<ShrubberyCreationForm>,
 		create<PresidentialPardonForm>
 	};
 

@@ -14,7 +14,7 @@ class Form
 
 		Form(Form const &src);
 
-		Form&				beSigned(Bureaucrat michel);
+		Form&				beSigned(Bureaucrat &michel);
 
 		std::string			getName(void) const;
 		int					getGrade(void) const;
