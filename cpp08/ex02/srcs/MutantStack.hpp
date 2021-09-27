@@ -32,36 +32,36 @@ class MutantStack: public std::stack<T>
 		// begin
 		typename std::stack<T>::container_type::iterator begin(void)
 		{
-			return (std::stack<T>::c.begin());
+			return (this->c.begin());
 		}
 		typename std::stack<T>::container_type::const_iterator begin(void) const
 		{
-			return (std::stack<T>::c.begin());
+			return (this->c.begin());
 		}
 		typename std::stack<T>::container_type::reverse_iterator rbegin(void)
 		{
-			return (std::stack<T>::c.rbegin());
+			return (this->c.rbegin());
 		}
 		typename std::stack<T>::container_type::const_reverse_iterator rbegin(void) const
 		{
-			return (std::stack<T>::c.rbegin());
+			return (this->c.rbegin());
 		}
 		//end
 		typename std::stack<T>::container_type::iterator end(void)
 		{
-			return (std::stack<T>::c.end());
+			return (this->c.end());
 		}
 		typename std::stack<T>::container_type::const_iterator end(void) const
 		{
-			return (std::stack<T>::c.end());
+			return (this->c.end());
 		}
 		typename std::stack<T>::container_type::reverse_iterator rend(void)
 		{
-			return (std::stack<T>::c.rend());
+			return (this->c.rend());
 		}
 		typename std::stack<T>::container_type::const_reverse_iterator rend(void) const
 		{
-			return (std::stack<T>::c.rend());
+			return (this->c.rend());
 		}
 };
 
