@@ -38,11 +38,11 @@ class MutantStack: public std::stack<T>
 		{
 			return (std::stack<T>::c.begin());
 		}
-		typename std::stack<T>::container_type::iterator rbegin(void)
+		typename std::stack<T>::container_type::reverse_iterator rbegin(void)
 		{
 			return (std::stack<T>::c.rbegin());
 		}
-		typename std::stack<T>::container_type::const_iterator rbegin(void) const
+		typename std::stack<T>::container_type::const_reverse_iterator rbegin(void) const
 		{
 			return (std::stack<T>::c.rbegin());
 		}
@@ -55,11 +55,11 @@ class MutantStack: public std::stack<T>
 		{
 			return (std::stack<T>::c.end());
 		}
-		typename std::stack<T>::container_type::iterator rend(void)
+		typename std::stack<T>::container_type::reverse_iterator rend(void)
 		{
 			return (std::stack<T>::c.rend());
 		}
-		typename std::stack<T>::container_type::const_iterator rend(void) const
+		typename std::stack<T>::container_type::const_reverse_iterator rend(void) const
 		{
 			return (std::stack<T>::c.rend());
 		}
